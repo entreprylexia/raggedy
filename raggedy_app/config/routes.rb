@@ -1,4 +1,5 @@
 RaggedyApp::Application.routes.draw do
+  get "/shop" => 'shop#index'
   devise_for :users
   # get "/welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.

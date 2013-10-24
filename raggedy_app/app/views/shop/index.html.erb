@@ -1,0 +1,67 @@
+
+ <div class="col-md-3">
+          <section class="filter">
+            <div class="scroll-wrap">
+              <div class="facet">
+                <header>Shop</header>
+              </div>
+
+        <div class="facet">
+          <header>tops</header>
+          <ul>...</ul>
+        </div>
+
+         <div class="facet">
+          <header>Designer</header>
+          <ul>...</ul>
+        </div>
+
+         <div class="facet">
+          <header>Size</header>
+          <ul>...</ul>
+        </div>
+
+         <div class="facet">
+          <header>Price</header>
+          <ul>...</ul>
+        </div>
+
+        </div>
+
+          </section>
+        </div><!--/span-->
+        <div class="col-md-9">
+
+<ul class="items">
+
+<h1>Shop#index</h1>
+<p>Find me in app/views/shop/index.html.erb</p>
+
+<% @products.each do |product| %>
+	<li class="item" style="display: list-item;">
+		<div class="item_box tk-museo-sans-rounded">
+		<div class="img_box" style="background-image: url(http://productshots2.modcloth.com/productshots/0119/2014/ad8ed0a4b2f0db9ac719428351678c5f.jpg)">
+		</div>
+		<h4><%= product.title %></h4>
+		<p><%= product.text %></p>
+		</div>
+	</li>
+<% end %>
+
+<% if false %>
+<li class="item" style="display: list-item;">
+	<div class="item_box tk-museo-sans-rounded">
+	<div class="img_box" style="background-image: url(http://www4.images.coolspotters.com/photos/295184/modcloth-zanzibar-dress-in-blue-profile.jpg)">
+	</div>
+	</div>
+</li>
+<li class="item" style="display: list-item;">
+	<div class="item_box tk-museo-sans-rounded">
+	<div class="img_box" style="background-image: url(http://productshots0.modcloth.net/productshots/0118/0397/182ed54821a6e193b9a61f1c33fe80ae.jpg?1344981426)">
+	</div>
+	</div>
+</li>
+<% end %>
+
+</ul>
+

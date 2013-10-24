@@ -18,6 +18,159 @@ body {
  	padding-bottom: 20px;*/
 }
 
-.navbar-fixed-top {
-	background-color: #000;
+.logo img {
+	max-height: 55px;
 }
+
+.navbar-fixed-top {
+
+	height: 70px;
+}
+
+ul {
+	list-style: none;
+}
+
+ul.items {
+	float: left;
+	overflow: visible;
+	width: 100%;
+}
+
+element.style {
+	display: list-item;
+}
+
+li {
+	text-align: -webkit-match-parent;
+}
+
+.tk-museo-sans-rounded {
+font-family: "museo-sans-rounded",sans-serif;
+}
+
+.item_box {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+background-color: #f8f8f8;
+border: 1px solid #eee;
+float: left;
+min-height: 60px;
+margin: 0px 7px 14px;
+padding: 8px 8px 3px 8px;
+position: relative;
+width: 226px;
+}
+
+.item_box .img_box {
+background-position: center center;
+background-size: cover;
+cursor: pointer;
+height: 294px;
+overflow: hidden;
+position: relative;
+}
+
+section {
+display: block;
+}
+
+section.filter {
+margin-top: 40px;
+width: 230px;
+position: absolute;
+}
+
+div {
+display: block;
+}
+
+
+section.filter .facet {
+overflow: hidden;
+border: 1px solid #ddd;
+border-bottom: 0;
+background: rgba(255,255,255,0.9);
+}
+
+section.filter header {
+font-size: 1em;
+line-height: 1;
+padding: 10px;
+border-bottom: 1px solid #ddd;
+background-color: #eee;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 0.8em;
+color: #4d4d4d;
+}
+
+footer {
+line-height: 18px;
+font-family: "museo-sans-rounded",sans-serif,"Helvetica Neue",Helvetica,Arial;
+padding: 0;
+clear: both;
+background: rgba(0,0,0,0.75);
+position: fixed;
+-webkit-transform: translateZ(0);
+bottom: 0;
+left: 0;
+margin: 0 auto;
+width: 100%;
+font-size: 0.9em;
+z-index: 9;
+}
+
+footer #container {
+position: relative;
+margin: 0 auto;
+width: 965px;
+display: block;
+height: 40px;
+}
+
+
+footer .copyright {
+line-height: 35px;
+top: 0;
+position: relative;
+color: #fff;
+color: rgba(255,255,255,0.6);
+display: inline-block;
+margin-right: 10px;
+}
+
+
+footer nav {
+display: inline-block;
+line-height: 35px;
+position: relative;
+}
+
+footer li {
+display: inline;
+}
+
+footer ul {
+list-style-type: none;
+}
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+}
+
+/*
+.well {
+   float: left;
+
+}*/
+
+/*.sidebar-nav {
+	float: left;
+}
+
+.col-md-3 {
+	float: left; important! 
+}*/

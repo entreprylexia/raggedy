@@ -42,6 +42,9 @@
 
     <div class="navbar navbar-fixed-top">
       <div class="container">
+        <div class="logo">
+          <%= image_tag 'raggedy_logo.png' %>
+        </div>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -60,27 +63,32 @@
 
     <div class="container">
       <div class="row" >
-        <div class="col-md-9">
+
+       
           <%= bootstrap_flash %>
           <%= yield %>
           <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+          <% unless alert.blank? %>
+            <p class="alert"><%= alert %></p>
+          <% end %>
         </div>
-        <div class="col-md-3">
-          <div class="well sidebar-nav">
-            <h3>Sidebar</h3>
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2013</p>
+        <div id="container">
+          <div class="copyright"> © 2013 – 2014 Raggedy.  All rights reserved </div>
+          <nav>
+            <ul>
+              <li class="blog">
+                <p>Blog</p>
+              </li>
+
+
+            </ul>
+
+          </nav>
+
+        </div>
       </footer>
 
     </div> <!-- /container -->
