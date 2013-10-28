@@ -40,7 +40,8 @@
 <% @products.each do |product| %>
 	<li class="item" style="display: list-item;">
 		<div class="item_box tk-museo-sans-rounded">
-		<div class="img_box" style="background-image: url(http://productshots2.modcloth.com/productshots/0119/2014/ad8ed0a4b2f0db9ac719428351678c5f.jpg)">
+		<div class="img_box">
+			<%= image_tag product.image.url(:thumb) %>
 		</div>
 		<h4><%= product.title %></h4>
 		<p><%= product.text %></p>
