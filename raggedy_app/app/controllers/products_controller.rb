@@ -1,11 +1,13 @@
 class ProductsController < ApplicationController
 
+	before_filter :authenticate_user!, only: [:new]
+
   def new
   	@product = Product.new
   end
 
   def create
-  	@product = Product.new(params[:product].permit(:title, :text))
+  	@product = Product.new(params[:product].permit(:title, :text, :image))
 
   	if @product.save
        redirect_to @product
@@ -31,7 +33,7 @@ end
   def update
   @product = Product.find(params[:id])
  
-  if @product.update(params[:product].permit(:title, :text))
+  if @product.update(params[:product].permit(:title, :text, :image))
     redirect_to @product
   else
     render 'edit'

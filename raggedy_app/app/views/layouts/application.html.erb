@@ -45,13 +45,23 @@
         <div class="logo">
           <%= image_tag 'raggedy_logo.png' %>
         </div>
+
+        <ul class="hmenu">
+          <%= render 'devise/menu/registration_items' %>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+
+        
+
+
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">RaggedyApp</a>
+      <a class="navbar-brand" href="#">RaggedyApp</a>
         <div class="nav-collapse collapse navbar-responsive-collapse">
+
           <ul class="nav navbar-nav">
             <li><%= link_to "Link1", "/path1"  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
