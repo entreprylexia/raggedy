@@ -22,6 +22,11 @@
   </p>
 
   <p>
+    <%= f.label :sub_category_id, 'Category' %><br>
+    <%= f.select :sub_category_id, option_groups_from_collection_for_select(@categories, :sub_categories, :name, :id, :name) %>
+  </p>
+
+  <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>

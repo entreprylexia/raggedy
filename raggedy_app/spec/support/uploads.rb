@@ -1,4 +1,4 @@
-
+ 
 def test_image_path
 	Rails.root.join('spec/images/example.jpeg')
 end 

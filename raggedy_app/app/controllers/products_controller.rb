@@ -4,18 +4,22 @@ class ProductsController < ApplicationController
 
   def new
   	@product = Product.new
+    @categories = Category.all
   end
 
   def create
-  	@product = Product.new(params[:product].permit(:title, :text, :image))
+  	@product = Product.new(params[:product].permit(:title, :text, :image, :sub_category_id))
 
   	if @product.save
        redirect_to @product
+    else 
+   	  render 'new'
+   end
 
-   else 
-   	render 'new'
-   end 
-end
+  rescue AWS::S3::Errors::RequestTimeout
+    flash.now[:notice] = "Upload time out"
+    render 'new'
+  end
 
 
   def index

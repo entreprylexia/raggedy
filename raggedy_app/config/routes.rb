@@ -13,6 +13,10 @@ RaggedyApp::Application.routes.draw do
 
   resources :products
 
+  resources :categories do 
+    resources :sub_categories
+  end 
+
 
   # root to: 'welcome#index'
 
