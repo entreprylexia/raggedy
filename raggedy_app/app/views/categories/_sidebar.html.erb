@@ -8,7 +8,9 @@
         <% Category.all.each do |category| %>
           <div class="facet">
             <header><%= link_to category.name, category %></header>
-            <ul>...</ul>
+            <% category.sub_categories.each do |sub_category| %>
+            <ul><%= link_to sub_category.name, [category, sub_category] %></ul>
+            <% end %>
           </div>
         <% end %>
 
