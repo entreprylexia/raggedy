@@ -1,0 +1,36 @@
+ <div class="col-md-3">
+          <section class="filter">
+            <div class="scroll-wrap">
+              <div class="facet">
+                <header>Shop</header>
+              </div>
+
+        <% Category.all.each do |category| %>
+          <div class="facet">
+            <header><%= link_to category.name, category %></header>
+            <% category.sub_categories.each do |sub_category| %>
+            <ul><%= link_to sub_category.name, [category, sub_category] %></ul>
+            <% end %>
+          </div>
+        <% end %>
+
+         <div class="facet">
+          <header>Designer</header>
+          <ul>...</ul>
+        </div>
+
+         <div class="facet">
+          <header>Size</header>
+          <ul>...</ul>
+        </div>
+
+         <div class="facet">
+          <header>Price</header>
+          <ul>...</ul>
+        </div>
+
+        </div>
+
+          </section>
+        </div><!--/span-->
+        <div class="col-md-9">
