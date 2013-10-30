@@ -15,6 +15,7 @@ RaggedyApp::Application.routes.draw do
 
   resources :categories do 
     resources :sub_categories
+    resources :sub_sizes
   end 
 
 

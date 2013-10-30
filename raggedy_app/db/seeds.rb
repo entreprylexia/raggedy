@@ -28,8 +28,9 @@ bags.sub_categories = [ SubCategory.create(name: 'Shoulder Bags'),
 Size.delete_all
 SubSize.delete_all 
 
-clothing_size = Size.create(name: 'Clothing Size')
-shoe_size = Size.create(name: 'Shoe Size')
+clothing_size = Size.create(name: 'Clothing Size', category: clothing)
+shoe_size = Size.create(name: 'Shoe Size', category: shoes)
+bag_size = Size.create(name: 'Bag Size', category: bags)
 
 clothing_size.sub_sizes = [ SubSize.create(name: 'S'),
 					   SubSize.create(name: 'M'),
@@ -40,7 +41,7 @@ shoe_size.sub_sizes = [ SubSize.create(name: '3.5'),
 					SubSize.create(name: '5'),
 					SubSize.create(name: '6') ]
 
-
+bag_size.sub_sizes = [ SubSize.create(name: 'One Size')]
 
 
 

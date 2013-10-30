@@ -5,10 +5,11 @@ class ProductsController < ApplicationController
   def new
   	@product = Product.new
     @categories = Category.all
+    @sizes = Size.all
   end
 
   def create
-  	@product = Product.new(params[:product].permit(:title, :text, :image, :sub_category_id))
+  	@product = Product.new(params[:product].permit(:title, :text, :image, :sub_category_id, :sub_size_id))
 
   	if @product.save
        redirect_to @product
