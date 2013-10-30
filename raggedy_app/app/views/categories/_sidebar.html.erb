@@ -19,10 +19,15 @@
           <ul>...</ul>
         </div>
 
+
+        <% Size.all.each do |size| %>
          <div class="facet">
-          <header>Size</header>
-          <ul><%= link_to 'XS', size: 'xs' %></ul>
+          <header><%= link_to size.name, '#' %></header>
+          <% size.sub_sizes.each do |sub_sizes| %>
+          <ul><%= link_to sub_size.name, '#' %></ul>
+          <% end %>
         </div>
+        <% end %>
 
          <div class="facet">
           <header>Price</header>

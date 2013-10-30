@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe Size do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:sub_sizes)}
+  it { should have_many(:products)}
 end

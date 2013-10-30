@@ -5,6 +5,7 @@ describe 'User uploading good' do
 	before do
 		user = FactoryGirl.create(:user)
 		login_as(user)
+		load "#{Rails.root}/db/seeds.rb"
 	end
 	
 	it 'can click on Sales button to upload page' do
