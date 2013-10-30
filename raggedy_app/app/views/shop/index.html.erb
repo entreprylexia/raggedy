@@ -13,6 +13,10 @@
 		</div>
 		<h4><%= product.title %></h4>
 		<p><%= product.text %></p>
+    <p><%= number_to_currency product.asking_price, unit: '£' %>
+      <% if product.asking_price && product.original_price %>
+        <strong><%= product.discount %> DISCOUNT</strong>
+      <% end %>
 		</div>
 	</li>
 <% end %>
