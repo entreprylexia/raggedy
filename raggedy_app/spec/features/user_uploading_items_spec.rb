@@ -24,4 +24,33 @@ describe 'User uploading good' do
 		expect(page).to have_css "img.product_image"
 	end
 
+
+	it 'adds category to product' do
+		visit new_product_path
+		fill_in 'Title', with: 'My product'
+		select 'Dresses', from: 'Category'
+		click_button 'Create Product'
+
+		expect(Product.last.sub_category.name).to eq 'Dresses'
+
+	end 
+
+
+	it 'can add size to a product' do
+		visit new_product_path
+		fill_in 'Title', with: 'My product'
+		select 'Dresses', from: 'Category'
+		select 'S', from: 'Size'
+		click_button 'Create Product'
+
+		expect(Product.last.sub_size.name).to eq 'S'
+	end 
+
 end 
+
+
+
+
+
+
+
