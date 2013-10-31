@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def create
   	@product = Product.new(params[:product].permit(:title, :text, :image, :sub_category_id, :sub_size_id, :asking_price, :original_price))
+    @product.user = current_user
 
   	if @product.save
        redirect_to @product
@@ -24,7 +25,7 @@ class ProductsController < ApplicationController
 
 
   def index
-  @products = Product.all
+  @products = current_user.products
   end
 
   def show

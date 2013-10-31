@@ -18,6 +18,10 @@ RaggedyApp::Application.routes.draw do
     resources :sub_sizes
   end 
 
+  resources :products do
+  resources :comments
+end
+
 
   # root to: 'welcome#index'
 
