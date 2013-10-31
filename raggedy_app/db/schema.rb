@@ -50,12 +50,12 @@ ActiveRecord::Schema.define(version: 20131031160631) do
     t.integer  "sub_size_id"
     t.decimal  "original_price",     precision: 8, scale: 2
     t.decimal  "asking_price",       precision: 8, scale: 2
-    t.integer  "product_id"
+    t.integer  "user_id"
   end
 
-  add_index "products", ["product_id"], name: "index_products_on_product_id", using: :btree
   add_index "products", ["sub_category_id"], name: "index_products_on_sub_category_id", using: :btree
   add_index "products", ["sub_size_id"], name: "index_products_on_sub_size_id", using: :btree
+  add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree
 
   create_table "sizes", force: true do |t|
     t.string   "name"

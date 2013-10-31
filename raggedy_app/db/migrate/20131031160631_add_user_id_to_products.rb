@@ -1,5 +1,5 @@
 class AddUserIdToProducts < ActiveRecord::Migration
   def change
-    add_reference :products, :product, index: true
+    add_reference :products, :user, index: true
   end
 end
