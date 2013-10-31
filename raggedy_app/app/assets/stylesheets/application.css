@@ -13,7 +13,8 @@
  */
 
 body {
-	margin-top: 80px;
+	margin-top: 90px;
+
 	/*padding-top: 50px;
  	padding-bottom: 20px;*/
 }
@@ -23,7 +24,6 @@ body {
 }
 
 .navbar-fixed-top {
-
 	height: 70px;
 }
 
@@ -54,12 +54,18 @@ transition: height 0.15s ease-in;
 overflow: hidden;
 }
 
+.container {
+margin-top: 120px;
+max-width: 1140px;
+}
+
 #notice_bar .container {
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
 width: 100%;
 margin: 0 auto;
+
 }
 
 #notice_bar .left_notice {
@@ -73,7 +79,7 @@ text-transform: uppercase;
 font-family: "museo-sans-rounded",sans-serif;
 }
 
-#notice_bar ul.shop-sell>li.header-tab:first-child {
+#notice_bar ul.shop-sell>li.header-tab:last-child {
 border-right: none;
 }
 
@@ -83,11 +89,21 @@ padding: 2px 15px;
 border-right: 1px solid #ccc;
 }
 
+#notice_bar ul.shop-sell>li.header-shop {
+height: 20px;
+}
+
 #notice_bar ul.shop-sell>li {
 float: left;
 line-height: 20px;
 font-size: 14px;
 font-family: "AvenirLTStd-Roman","Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+
+#notice_bar ul.shop-sell>li.header-tab {
+margin: 8px 0px;
+padding: 2px 15px;
+border-right: 1px solid #ccc;
 }
 
 a {
@@ -97,6 +113,73 @@ cursor: inherit;
 cursor: pointer;
 }
 
+#content {
+overflow: hidden;
+overflow: visible;
+width: 960px;
+display: block;
+padding-bottom: 60px;
+position: relative;
+margin-top: 20px;
+}
+
+.product_info_page_half {
+margin-right: 20px;
+display: block;
+width: 470px;
+float: left;
+padding-top: 20px;
+}
+
+.product_main_image_comments {
+float: left;
+width: 390px;
+}
+
+.product_main_image_container {
+text-align: center;
+padding: 0 15px;
+margin-bottom: 10px;
+}
+
+element.style {
+position: relative;
+overflow: hidden;
+}
+
+.product_image {
+max-width: 100%;
+}
+
+.product_main_image_container .image_container {
+display: block; 
+}
+
+.product_info_page_half+.product_info_page_half {
+margin-right: 0;
+}
+
+.product_main_and_tabbed_info {
+display: block;
+float: left;
+}
+
+.product_info_page_half h1 {
+color: #28b4ef;
+font-size: 24px;
+font-weight: 500;
+letter-spacing: 2px;
+margin-bottom: 0.25em;
+}
+
+.tk-museo-sans-rounded {
+font-family: "museo-sans-rounded",sans-serif;
+}
+
+.item_details {
+width: 460px;
+float: right;
+}
 
 
 ul.items {
@@ -125,7 +208,8 @@ font-family: "museo-sans-rounded",sans-serif;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
-background-color: #f8f8f8;
+background-color: #f8f8f8; important!
+color: #f8f8f8;
 border: 1px solid #eee;
 float: left;
 min-height: 60px;

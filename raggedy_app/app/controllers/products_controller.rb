@@ -32,7 +32,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-  @product = Product.find(params[:id])
+    @product = Product.find(params[:id])
+    @categories = Category.all
+    @sizes = Size.all
   end
 
   def update
