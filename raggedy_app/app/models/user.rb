@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   has_many :products
 
   validates :username, uniqueness: true
-  # has_many :products
+  has_many :products
 end
