@@ -1,1 +1,0 @@
-We're developing a digital platform for social change in the fashion and second hand clothing industry. Its main purpose will be to educate people and provide them with a sustainable platform for consumption.
