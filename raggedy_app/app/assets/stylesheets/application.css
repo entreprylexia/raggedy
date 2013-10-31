@@ -58,8 +58,43 @@ overflow: hidden;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
-width: 960px;
+width: 100%;
 margin: 0 auto;
+}
+
+#notice_bar .left_notice {
+float: left;
+font-size: 16px;
+font-weight: 300;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+}
+.tk-museo-sans-rounded {
+font-family: "museo-sans-rounded",sans-serif;
+}
+
+#notice_bar ul.shop-sell>li.header-tab:first-child {
+border-right: none;
+}
+
+#notice_bar ul.shop-sell>li.header-tab {
+margin: 8px 0px;
+padding: 2px 15px;
+border-right: 1px solid #ccc;
+}
+
+#notice_bar ul.shop-sell>li {
+float: left;
+line-height: 20px;
+font-size: 14px;
+font-family: "AvenirLTStd-Roman","Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+
+a {
+color: inherit;
+text-decoration: inherit;
+cursor: inherit;
+cursor: pointer;
 }
 
 
@@ -76,6 +111,10 @@ element.style {
 
 li {
 	text-align: -webkit-match-parent;
+}
+
+ol, ul {
+list-style: none;
 }
 
 .tk-museo-sans-rounded {
@@ -111,8 +150,6 @@ display: block;
 
 section.filter {
 margin-top: 40px;
-width: 230px;
-position: absolute;
 }
 
 div {
