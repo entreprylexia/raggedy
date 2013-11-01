@@ -8,12 +8,22 @@
 				<%= image_tag @product.image.url, class: 'product_image' %>
 				</p>
 			</div>
+			<div class="product_comments_container">
+				<div class="product_comments">
 
-			<h4>Comments</h4>
-				<%= render @product.comments %>
-			<h5>Add a comment:</h5>
-				<%= render "comments/form" %>
+				<h3>COMMENTS</h3>
 
+				<div class="comment_boxes">
+				</div>
+				</div>
+				<div class="comment_form">
+					
+					<%= render @product.comments %>
+				    <h5>Add a comment:</h5>
+					<%= render "comments/form" %>
+               </div>
+                </div>
+            </div>
         </div>
     </div>
  </div>
@@ -42,6 +52,10 @@
 					  <strong>Description:</strong>
 					  <%= @product.text %>
 					</p>
+					<%= link_to 'Back', products_path %>
+					<%= link_to 'Edit', edit_product_path(@product) %>
+					<%= link_to 'Destroy', product_path(@product),
+                      method: :delete, data: { confirm: 'Are you sure?' } %>
 
                   </div>
                 </div>
@@ -50,12 +64,6 @@
  	</div>
  </div>
 
- 
-
-<%= link_to 'Back', products_path %>
-<%= link_to 'Edit', edit_product_path(@product) %>
-<%= link_to 'Destroy', product_path(@product),
-                      method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
 
