@@ -65,7 +65,22 @@
 					<%= link_to 'Destroy', product_path(@product),
                       method: :delete, data: { confirm: 'Are you sure?' } %>
 
+                   <br></br>   
+
                   </div>
+                  <%= form_tag product_charges_path(@product) do %>
+					  <article>
+					    <label class="amount">
+					      <span>Amount: <%= number_to_currency @product.asking_price, unit: '£' %></span>
+					    </label>
+					  </article>
+
+					  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+					          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+					          data-description="Your raggedy purchase"
+					          data-amount="<%= @product.asking_price * 100 %>"
+					          data-currency='gbp'></script>
+					<% end %>
                 </div>
             </div>
         </div>
