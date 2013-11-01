@@ -15,6 +15,8 @@ RaggedyApp::Application.routes.draw do
 
   root 'welcome#index'
 
+  get 'profiles/:username' => 'user#profile'
+
 
   resources :products
 

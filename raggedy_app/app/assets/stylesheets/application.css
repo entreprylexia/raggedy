@@ -182,6 +182,7 @@ float: right;
 
 
 ul.items {
+	margin-top: 50px;
 	float: left;
 	overflow: visible;
 	width: 100%;
