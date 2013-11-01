@@ -96,3 +96,23 @@ input[type="hidden"] {
 display: none;
 }
 
+.comment-label {
+	text-align: left;
+}
+.create-comment {
+	text-align: left;
+}
+
+#comment_commenter, #comment_body {
+	width: 320px;
+}
+
+.original-price {
+	text-decoration: line-through;
+	font-size: 12px;
+}
+
+.product-discount {
+	font-size: 12px;
+}
+

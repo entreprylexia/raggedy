@@ -2,14 +2,11 @@ require 'spec_helper'
 
 describe 'user profile page' do 
 
-	it 'can upload an image' do 
-		visit user_path "yuin"
+	let(:user) { FactoryGirl.create(:user) }
 
-		attach_file 'Image', test_image_path
-		click_button 'Create Image'
-
-		expect(page).to have_css "img.profile_image"
-
+	it 'can visit a profile page' do 
+		visit profile_path(user)
+		expect(page).to have_content 'Profile page'
 	end 
 
 

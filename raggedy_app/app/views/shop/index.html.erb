@@ -17,10 +17,18 @@
 		<h4><%= product.title %></h4>
 	</a>
 		<p><%= product.text %></p>
-    <p><%= number_to_currency product.asking_price, unit: '£' %>
-      <% if product.asking_price && product.original_price %>
-        <strong><%= product.discount %> DISCOUNT</strong>
-      <% end %>
+		<span class='asking-price'>
+    <strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
+    	</span>
+    	<span class='original-price'>
+		 	<%= number_to_currency product.original_price, unit: '£' %>
+		 </span>
+      <span class='product-discount'>
+		<% if product.asking_price && product.original_price %>
+			 (<%= product.discount %> Discount)
+		</span>
+	<% end %>
+
 		</div>
 	</li>
 <% end %>
@@ -28,4 +36,6 @@
 
 
 </ul>
+
+
 

@@ -1,8 +1,11 @@
 RaggedyApp::Application.routes.draw do
   get "/shop" => 'shop#index'
 
-  resources :users, only: :show
+  # get "/username" => '\user#show'
+
+  # resources :users, only: :show
   devise_for :users
+  resources :profiles
   # get "/welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
