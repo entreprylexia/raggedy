@@ -50,6 +50,9 @@
         </div>
 
         <ul class="hmenu">
+          <span class='item_count'>
+            <%= link_to pluralize(current_cart.count, 'item'), current_cart %>
+          </span>
           <%= render 'devise/menu/registration_items' %>
           <%= render 'devise/menu/login_items' %>
         </ul>

@@ -18,10 +18,10 @@ RaggedyApp::Application.routes.draw do
 
   get 'profiles/:username' => 'user#profile'
 
-
   resources :products do
     resources :charges
   end
+  resources :carts
 
   resources :categories do 
     resources :sub_categories

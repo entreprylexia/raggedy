@@ -53,13 +53,15 @@
 
 			      	<p>
 			      		<strong>Size:</strong>
-			      		<%= @product.sub_size.name %>
+			      		<%= @product.sub_size.name if @product.sub_size %>
 			      	</p>
 
 			      	<p>
 					  <strong>Description:</strong>
 					  <%= @product.text %>
 					</p>
+					<%= render 'add_to_cart', product: @product %>
+					
 					<%= link_to 'Back', products_path %>
 					<%= link_to 'Edit', edit_product_path(@product) %>
 					<%= link_to 'Destroy', product_path(@product),
