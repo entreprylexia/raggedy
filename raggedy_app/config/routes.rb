@@ -19,6 +19,7 @@ RaggedyApp::Application.routes.draw do
 
 
   resources :products
+  resources :carts
 
   resources :categories do 
     resources :sub_categories

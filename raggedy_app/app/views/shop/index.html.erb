@@ -4,27 +4,27 @@
 <% @products.each do |product| %>
 	<li class="item" style="display: list-item;">
 		<div class="item_box tk-museo-sans-rounded">
-		<a href="<%= product_path(product) %>" >
-		<div class="img_box">
-			<%= image_tag product.image.url(:thumb) %>
-		</div>
-	</a>
-	<a href="<%= product_path(product) %>" >
-		<h4><%= product.title %></h4>
-	</a>
-		<p><%= product.text %></p>
-		<span class='asking-price'>
-    <strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
-    	</span>
-    	<span class='original-price'>
-		 	<%= number_to_currency product.original_price, unit: '£' %>
-		 </span>
-      <span class='product-discount'>
-		<% if product.asking_price && product.original_price %>
-			 (<%= product.discount %> Discount)
-		</span>
-	<% end %>
-
+			<a href="<%= product_path(product) %>" >
+				<div class="img_box">
+					<%= image_tag product.image.url(:thumb) %>
+				</div>
+			</a>
+			<a href="<%= product_path(product) %>" >
+				<h4><%= product.title %></h4>
+			</a>
+			<p><%= product.text %></p>
+			<span class='asking-price'>
+			    <strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
+	    	</span>
+	    	<span class='original-price'>
+			 	<%= number_to_currency product.original_price, unit: '£' %>
+			</span>
+		    <span class='product-discount'>
+				<% if product.asking_price && product.original_price %>
+					 (<%= product.discount %> Discount)
+				<% end %>
+			</span>
+			<%= render 'products/add_to_cart', product: product %>
 		</div>
 	</li>
 <% end %>

@@ -1,0 +1,14 @@
+<% if current_cart.products.any? %>
+	<% current_cart.products.each do |product| %>
+		<li>
+		<%= image_tag product.image.url(:thumb) %>
+		<%= product.title %>
+		<%= product.text %>
+		<%= number_to_currency product.asking_price, unit: '£' %>
+ 		<%= link_to 'Remove', cart_path(id: product.id),
+                    method: :delete, data: { confirm: 'Are you sure?' } %> 
+		</li>
+	<% end %>
+<% else %>
+	<h3>No products</h3>
+<% end %>

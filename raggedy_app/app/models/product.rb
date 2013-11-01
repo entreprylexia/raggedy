@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
 	belongs_to :sub_size
 	belongs_to :user
 	has_many :comments
+	has_and_belongs_to_many :carts
+	
 	validates :title, presence: true,
                     length: { minimum: 3 }
     has_attached_file :image, styles: {thumb: '208 x 294>'},
