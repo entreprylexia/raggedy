@@ -35,6 +35,10 @@ height: 210px;
 box-shadow: #ccc 0px 0px 6px inset;
 }
 
+.profile_image {
+	max-width: 100%;
+}
+
 .profile .user_details {
 float: left;
 margin-left: 50px;
@@ -99,4 +103,6 @@ font-family: "AvenirLTStd-Medium","Helvetica Neue",Arial,Helvetica,sans-serif;
 font-size: 16px;
 font-style: bold;
 }
+
+
 
