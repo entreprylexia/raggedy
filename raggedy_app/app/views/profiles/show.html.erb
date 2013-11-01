@@ -1,5 +1,24 @@
-<h1><%= @user.username %>'s Profile</h1>
+<div class="profile">
+		<div class="user_photo">
 
 <%= image_tag @user.avatar.url(:medium) %>
+<div class="photo_shadow"></div>
+   </div>
+</div>
 
+<div class="user_details">
+	<div class="user_header">
+		<h1 class="tk-museo-sans-rounded username upcase">
+			<%= @user.username %>'s Profile</h1>
+			<span class="user_edit">
+				<a href="/users/edit" class="link_edit">Edit Profile</a>
+			</span>
+  </div>
+</div>
+
+<div class="user-products">
+	<div class="tabs">
+		<div class="closet_title collection_toggle selected">Your Closet</div>
+  </div>
+</div>
 
