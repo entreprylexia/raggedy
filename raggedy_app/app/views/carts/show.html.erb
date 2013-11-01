@@ -8,7 +8,25 @@
  		<%= link_to 'Remove', cart_path(id: product.id),
                     method: :delete, data: { confirm: 'Are you sure?' } %> 
 		</li>
+		
+		<%= form_tag product_charges_path(product) do %>
+		  <article>
+		    <label class="amount">
+		      <span>Amount: <%= number_to_currency product.asking_price, unit: '£' %></span>
+		    </label>
+		  </article>
+
+		  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+		          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+		          data-description="Your raggedy purchase"
+		          data-amount="<%= product.asking_price * 100 %>"
+		          data-currency='gbp'></script>
+		<% end %>
+
+
 	<% end %>
+
 <% else %>
 	<h3>No products</h3>
 <% end %>
+
