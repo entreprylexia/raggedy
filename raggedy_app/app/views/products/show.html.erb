@@ -60,7 +60,6 @@
 					  <strong>Description:</strong>
 					  <%= @product.text %>
 					</p>
-					<%= render 'add_to_cart', product: @product %>
 					
 					<%= link_to 'Back', products_path %>
 					<%= link_to 'Edit', edit_product_path(@product) %>
@@ -70,6 +69,8 @@
                    <br></br>   
 
                   </div>
+                  <%= render 'add_to_cart', product: @product %>
+                  <br></br>
                   <%= form_tag product_charges_path(@product) do %>
 					  <article>
 					    <label class="amount">
@@ -77,11 +78,13 @@
 					    </label>
 					  </article>
 
-					  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
-					          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-					          data-description="Your raggedy purchase"
-					          data-amount="<%= @product.asking_price * 100 %>"
-					          data-currency='gbp'></script>
+					  <% if @product.asking_price %>
+						  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
+						          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+						          data-description="Your raggedy purchase"
+						          data-amount="<%= @product.asking_price * 100 %>"
+						          data-currency='gbp'></script>
+					  <% end %>
 					<% end %>
                 </div>
             </div>
