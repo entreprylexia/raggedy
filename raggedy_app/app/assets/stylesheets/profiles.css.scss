@@ -42,21 +42,26 @@ box-shadow: #ccc 0px 0px 6px inset;
 .profile .user_details {
 float: left;
 margin-left: 50px;
-margin-top: 5px;
+margin-top: 50px;
 width: 650px;
 }
 
 .profile .user_details .user_header {
+margin-top: 60px;
 display: inline-block;
 width: 100%;
 float: left;
 }
 
 .profile .user_details .username {
+margin-top: 30px; 
 font-family: "AvenirLTStd-Medium","Helvetica Neue",Arial,Helvetica,sans-serif;
 font-size: 26px;
 }
 
+.username {
+	margin-top: 50px;
+}
 
 
 .profile span {
@@ -82,8 +87,9 @@ color: #28b4ef;
 }
 
 .user-products .tabs {
-margin: 3em 0 1em;
+/*margin: 3em 0 1em;*/
 text-align: left;
+margin-top: 0px;
 }
 
 .user-products .tabs .collection_toggle.selected {

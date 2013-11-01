@@ -1,24 +1,64 @@
-<div class="profile">
-		<div class="user_photo">
+<div class='row'>
+	<div class='col-md-3'>
 
-<%= image_tag @user.avatar.url(:medium), class: 'profile_image' %>
-<div class="photo_shadow"></div>
-   </div>
+		<div class="profile">
+			<div class="user_photo">
+
+				<%= image_tag @user.avatar.url(:medium), class: 'profile_image' %>
+				<div class="photo_shadow"></div>
+		   </div>
+		</div>
+
+	</div>
+
+	<div class='col-md-4'>		
+
+		<div class="user_details">
+			<div class="user_header">
+				<h1 class="tk-museo-sans-rounded username upcase">
+					<%= @user.username %>'s Profile</h1>
+					<span class="user_edit">
+						<a href="/users/edit" class="link_edit">Edit Profile</a>
+					</span>
+		  </div>
+		</div>
+
+	</div>
 </div>
-
-<div class="user_details">
-	<div class="user_header">
-		<h1 class="tk-museo-sans-rounded username upcase">
-			<%= @user.username %>'s Profile</h1>
-			<span class="user_edit">
-				<a href="/users/edit" class="link_edit">Edit Profile</a>
-			</span>
-  </div>
-</div>
-
+<ul>
 <div class="user-products">
 	<div class="tabs">
-		<div class="closet_title collection_toggle selected">Your Closet</div>
+
+		 	<div class="closet_title collection_toggle selected">Your Closet</div>
+		 	<br></br>
+		<% current_user.products.each do |product| %>
+			<li class="item" style="display: list-item;">
+				<div class="item_box tk-museo-sans-rounded">
+				<a href="<%= product_path(product) %>" >
+				<div class="img_box">
+					<%= image_tag product.image.url(:thumb) %>
+				</div>
+			</a>
+			<a href="<%= product_path(product) %>" >
+				<h4><%= product.title %></h4>
+			</a>
+				<p><%= product.text %></p>
+				<span class='asking-price'>
+		    <strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
+		    	</span>
+		    	<span class='original-price'>
+				 	<%= number_to_currency product.original_price, unit: '£' %>
+				 </span>
+		      <span class='product-discount'>
+				<% if product.asking_price && product.original_price %>
+					 (<%= product.discount %> Discount)
+				</span>
+			<% end %>
+
+				</div>
+			</li>
+		<% end %>
+</ul>
   </div>
 </div>
 
