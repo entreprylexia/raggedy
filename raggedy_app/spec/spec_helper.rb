@@ -58,4 +58,9 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Warden::Test::Helpers
   Warden.test_mode!
+
+end
+
+def emails
+  ActionMailer::Base.deliveries
 end

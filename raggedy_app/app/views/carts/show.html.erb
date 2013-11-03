@@ -1,7 +1,7 @@
 <% if current_cart.products.any? %>
 	<% current_cart.products.each do |product| %>
 		<li>
-		<%= image_tag product.image.url(:thumb) %>
+		<%= image_tag product.image.url :thumb %>
 		<%= product.title %>
 		<%= product.text %>
 		<%= number_to_currency product.asking_price, unit: '£' %>
