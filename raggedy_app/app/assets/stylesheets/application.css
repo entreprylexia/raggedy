@@ -330,7 +330,7 @@ background-image: url(/assets/heart.png);
 background-repeat: no-repeat;
 background-size: 42px 68px;
 color: #777;
-font-size: 12px;
+font-size: 10px;
 height: 30px;
 line-height: 26px;
 text-align: center;
@@ -391,6 +391,30 @@ display: inline;
 padding: 0;
 background-image: none;
 }
+
+.account {
+position: relative;
+width: 20px;
+display: inline-block;
+position: relative;
+padding: 0 14px;
+margin: 0;
+}
+
+.account>img {
+vertical-align: middle;
+display: inline-block;
+}
+
+.account img {
+border-radius: 50%;
+height: 33px;
+position: relative;
+top: -2px;
+vertical-align: middle;
+width: 33px;
+}
+
 
 section {
 display: block;

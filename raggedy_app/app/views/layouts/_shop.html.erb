@@ -2,35 +2,44 @@
 <% @products.each do |product| %>
 	<li class="item" style="display: list-item;">
 		<div class="item_box tk-museo-sans-rounded">
-			
-			<a href="<%= product_path(product) %>" >
-				<div class="img_box">
-					<%= image_tag product.image.url(:thumb) %>
-				</div>
-
-				<div class="overlay">
+			<div class="overlay">
 				<%= form_for current_cart do |f| %>
 					<%= f.hidden_field :product_id, value: product.id %>
 					<%= f.button 'Add to Bag', class: 'add_to_cart' %>
 				<% end %>
 			</div>
+			<a href="<%= product_path(product) %>" >
+				<div class="img_box">
+					<%= image_tag product.image.url(:thumb) %>
+				</div>
 			</a>
+
+			<div class="controls">
+				<div class='like-btn <%= 'liked' if current_user && current_user.liked?(product) %>'>
+					<%= link_to product.likes.count, product_likes_path(product), method: :post, class: 'want' %>
+				</div>
 			<a href="<%= product_path(product) %>" >
 				<h4><%= product.title %></h4>
 			</a>
 			<!-- <p><%= product.text %></p> -->
+			<div class="pricing_container">
+				<div class="price tk-museo-sans-rounded">
 			<span class='asking-price'>
 			    <strong><%= number_to_currency(product.asking_price, unit: '£').gsub(/\.00$/, "") %></strong>
 	    	</span>
+	  
 	    	<span class='original-price'>
 			 	<%= number_to_currency product.original_price, unit: '£' %>
 			</span>
 		    <span class='product-discount'>
 				<% if product.asking_price && product.original_price %>
-					 (<%= product.discount %> OFF)
+					 (<%= product.discount %> Discount)
 				<% end %>
 			</span>
+			</div>
 			 <!-- <%= render 'products/add_to_cart', product: product %> -->
+			</div>
+			</div>
 		</div>
 	</li>
 <% end %>

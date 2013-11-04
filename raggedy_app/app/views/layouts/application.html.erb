@@ -63,8 +63,22 @@
             </div>
             </section>
         </li>
+        <li class="account">
+          <img class="icon" src="@user.avatar.url(:thumb)">
+          <section class="dropdown">
+            <div class="scroll-wrap">
+              <ul>
+                <li>
+                  <a href="profiles/:username">My Profile</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          </li>
           <%= render 'users/menu/registration_items' %>
           <%= render 'users/menu/login_items' %>
+
         </ul>
 
 
