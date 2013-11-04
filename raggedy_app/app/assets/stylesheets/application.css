@@ -236,6 +236,7 @@ font-stretch: normal;
 font-size: 16px;
 }
 
+
 .item_box .controls .title {
 height: 16px;
 padding: 3px 0px 7px;
@@ -253,11 +254,26 @@ white-space: nowrap;
 width: 170px;
 }
 
+.item_box .controls .pricing_container .price {
+display: inline-block;
+/*margin: 5px 0;*/
+max-width: 80px;
+font-size: 16px;
+}
+
+.tk-museo-sans-rounded {
+font-family: "museo-sans-rounded",sans-serif;
+}
+
+.item_box .controls .pricing_container {
+white-space: nowrap;
+}
+
 
 .item_box .overlay {
 display: none;
 position: absolute;
-bottom: 63px;
+bottom: 69px;
 height: 52px;
 width: 208px;
 z-index: 5;
@@ -310,7 +326,7 @@ font-family: "mreavesmod","Helvetica Neue",Arial,Helvetica,sans-serif;
 font-weight: normal;
 font-stretch: normal;
 background-position: -3px -3px;
-background-image: url(/heart.png);
+background-image: url(images/heart.png);
 background-repeat: no-repeat;
 background-size: 42px 68px;
 color: #777;

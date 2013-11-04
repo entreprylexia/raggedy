@@ -20,14 +20,14 @@
 			</a>
 			<!-- <p><%= product.text %></p> -->
 			<span class='asking-price'>
-			    <strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
+			    <strong><%= number_to_currency(product.asking_price, unit: '£').gsub(/\.00$/, "") %></strong>
 	    	</span>
 	    	<span class='original-price'>
 			 	<%= number_to_currency product.original_price, unit: '£' %>
 			</span>
 		    <span class='product-discount'>
 				<% if product.asking_price && product.original_price %>
-					 (<%= product.discount %> Discount)
+					 (<%= product.discount %> OFF)
 				<% end %>
 			</span>
 			 <!-- <%= render 'products/add_to_cart', product: product %> -->
