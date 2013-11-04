@@ -62,9 +62,10 @@
 					</p>
 					
 					<%= link_to 'Back', products_path %>
-					<%= link_to 'Edit', edit_product_path(@product) %>
-					<%= link_to 'Destroy', product_path(@product),
-                      method: :delete, data: { confirm: 'Are you sure?' } %>
+					<% if @product.user == current_user %>
+						<%= link_to 'Edit', edit_product_path(@product) %>
+						<%= link_to 'Destroy', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
+					<% end %>
 
                    <br></br>   
 

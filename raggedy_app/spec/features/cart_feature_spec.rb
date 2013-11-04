@@ -10,13 +10,13 @@ describe 'the cart' do
 
 	it 'can have items to it' do 
 		visit shop_path(dress)
-		click_button "Add to Cart" 
+		click_button "Add to Bag" 
 		expect(page).to have_css '.item_count', text: '1 item'
 	end 
 
 	it 'can remove an item' do 
 		visit shop_path(dress)
-		click_button "Add to Cart"
+		click_button "Add to Bag"
 		click_link '1 item'
 		click_link "Remove"
 		expect(page).to have_css '.item_count', text: '0 item'

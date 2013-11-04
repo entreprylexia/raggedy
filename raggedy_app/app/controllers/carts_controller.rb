@@ -4,7 +4,7 @@ class CartsController < ApplicationController
 	    product = Product.find params[:cart][:product_id]
 	    current_cart.products << product
 
-	    redirect_to product_path(product)
+	    redirect_to current_cart
  	end
 
 	def destroy
