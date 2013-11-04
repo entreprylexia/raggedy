@@ -347,8 +347,12 @@ position: relative;
 }
 
 .cart a {
-background-image: url(cart.png);
-background-size: 23px 18px;
+/*background-image: url(cart.png);*/
+/*background-size: 23px 18px;*/
+}
+
+.cart-icon {
+	width: 24px;
 }
 
 .cart .dropdown {

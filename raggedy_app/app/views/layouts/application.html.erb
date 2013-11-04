@@ -54,7 +54,7 @@
           <span class='item_count'>
             <%= link_to pluralize(current_cart.count, 'item'), current_cart %>
           </span>
-          <%= image_tag("cart.png", :alt => "current_cart") %>
+          <%= image_tag("cart.png", :alt => "current_cart", class: 'cart-icon') %>
           <section class="dropdown cart_menu_dropdown" style="display: none;">
             <div class="scroll-wrap">
               <header>
