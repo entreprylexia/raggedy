@@ -7,6 +7,8 @@ RaggedyApp::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => :registrations }
 
   resources :profiles
+
+  resources :user_orders
   # get "/welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -17,6 +19,8 @@ RaggedyApp::Application.routes.draw do
   root 'welcome#index'
 
   get 'profiles/:username' => 'user#profile'
+
+  get 'user_orders/:username' => 'user#user_order'
 
   resources :products do
     resources :charges

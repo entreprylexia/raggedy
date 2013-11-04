@@ -257,7 +257,7 @@ width: 170px;
 .item_box .overlay {
 display: none;
 position: absolute;
-bottom: 79px;
+bottom: 63px;
 height: 52px;
 width: 208px;
 z-index: 5;
@@ -265,10 +265,16 @@ background-color: #f8f8f8;
 background-color: rgba(248,248,248,0.5);
 }
 
+.item_box:hover .overlay {
+	display: block;
+}
+
 .item_box .add_to_cart {
 font-size: 13px;
 word-spacing: 4px;
 margin: 10px 0 0 2px;
+border-radius: 7px;
+display: inline-block;
 }
 
 .add_to_cart {

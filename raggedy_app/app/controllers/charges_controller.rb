@@ -21,10 +21,11 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
+	  Order.create(user: current_user, products: [@product])
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path
 	end
-
 
 end
