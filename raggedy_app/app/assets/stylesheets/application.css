@@ -326,15 +326,70 @@ font-family: "mreavesmod","Helvetica Neue",Arial,Helvetica,sans-serif;
 font-weight: normal;
 font-stretch: normal;
 background-position: -3px -3px;
-background-image: url(images/heart.png);
+background-image: url(/assets/heart.png);
 background-repeat: no-repeat;
 background-size: 42px 68px;
 color: #777;
 font-size: 12px;
 height: 30px;
-line-height: 30px;
+line-height: 26px;
 text-align: center;
 width: 36px;
+}
+
+.liked .want, .want:hover {
+	background-position: -3px -37px;
+	color: white;
+}
+
+.cart {
+position: relative;
+}
+
+.cart a {
+background-image: url(cart.png);
+background-size: 23px 18px;
+}
+
+.cart .dropdown {
+font-size: 0.8em;
+color: #888;
+}
+
+.dropdown {
+display: none;
+position: absolute;
+top: 100%;
+left: 50%;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+width: 205px;
+margin-left: -115px;
+background-color: #fff;
+color: #4d4d4d;
+text-indent: 0;
+line-height: 1;
+-webkit-box-shadow: #bbb 0px 2px 4px;
+-moz-box-shadow: #bbb 0px 2px 4px;
+box-shadow: #bbb 0px 2px 4px;
+}
+
+.cart .dropdown header {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+margin: 10px;
+position: relative;
+text-transform: uppercase;
+text-align: center;
+letter-spacing: auto;
+}
+
+.cart .dropdown header a {
+display: inline;
+padding: 0;
+background-image: none;
 }
 
 section {

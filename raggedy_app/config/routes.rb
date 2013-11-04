@@ -25,6 +25,7 @@ RaggedyApp::Application.routes.draw do
 
   resources :products do
     resources :charges
+    resources :likes
   end
   resources :carts
 

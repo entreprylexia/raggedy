@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable 
   has_many :products
+  has_many :likes
 
   validates :username, uniqueness: true
   # has_many :products
@@ -15,4 +16,13 @@ class User < ActiveRecord::Base
   def to_param
   	username
   end
+
+  def like_product(product)
+    likes.find_by(product_id: product.id) || Like.new(product: product)
+  end
+
+  def liked?(product)
+    not like_product(product).new_record?
+  end
+
 end

@@ -50,9 +50,19 @@
         </div>
 
         <ul class="hmenu">
+          <li class="cart">
           <span class='item_count'>
             <%= link_to pluralize(current_cart.count, 'item'), current_cart %>
           </span>
+          <%= image_tag("cart.png", :alt => "current_cart") %>
+          <section class="dropdown cart_menu_dropdown" style="display: none;">
+            <div class="scroll-wrap">
+              <header>
+                <a href="/cart" class="header_cart_link" style="cursor: default;"> 0 Products in your basket</a>
+              </header>
+            </div>
+            </section>
+        </li>
           <%= render 'users/menu/registration_items' %>
           <%= render 'users/menu/login_items' %>
         </ul>
