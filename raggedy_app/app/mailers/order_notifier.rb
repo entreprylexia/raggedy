@@ -7,5 +7,8 @@ class OrderNotifier < ActionMailer::Base
 
   	mail(to: buyer.email, subject: 'Order Confirmation')
   end 
+
+  def seller_confirmation_email(product, seller)
+  end
   
 end

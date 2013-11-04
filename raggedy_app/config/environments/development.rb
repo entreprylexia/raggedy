@@ -23,8 +23,8 @@ RaggedyApp::Application.configure do
      :authentication => :plain,
      :address => "smtp.mailgun.org",
      :port => 587,
-     :domain => "my-mailgun-domain.com",
-     :user_name => "postmaster@my-mailgun-domain.com",
+     :domain => "raggedy.mailgun.org",
+     :user_name => "postmaster@raggedy.mailgun.org",
      :password => ENV['MAILGUN_PASSWORD']
   }
 

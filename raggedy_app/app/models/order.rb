@@ -6,6 +6,11 @@ class Order < ActiveRecord::Base
 
 	def send_confirmation_email
 		OrderNotifier.confirmation_email(products.count, user).deliver! 
+		
+		products.each do |product|
+			seller =  product.user
+			OrderNotifier.seller_confirmation_email(product, seller).deliver! 
+		end
 	end 
 
 
