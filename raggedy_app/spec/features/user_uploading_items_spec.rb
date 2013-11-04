@@ -2,9 +2,12 @@ require 'spec_helper'
 
 describe 'User uploading good' do
 
+describe "signed in" do
+		include_context "signed in"
+
 	before do
-		user = FactoryGirl.create(:user)
-		login_as(user)
+		# user = FactoryGirl.create(:user)
+		# login_as(user)
 		load "#{Rails.root}/db/seeds.rb"
 	end
 	
@@ -46,6 +49,8 @@ describe 'User uploading good' do
 
 		expect(Product.last.sub_size.name).to eq 'S'
 	end 
+
+end 
 
 end 
 

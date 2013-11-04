@@ -1,4 +1,5 @@
 RaggedyApp::Application.routes.draw do
+  devise_for :admins
   get "/shop" => 'shop#index'
 
   # get "/username" => '\user#show'
