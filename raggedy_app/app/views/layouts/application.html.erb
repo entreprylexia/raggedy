@@ -63,17 +63,34 @@
             </div>
             </section>
         </li>
+        <% if current_user %>
         <li class="account">
-          <img class="icon" src="@user.avatar.url(:thumb)">
-          <section class="dropdown">
+          <%= image_tag current_user.avatar.url(:thumb), class: 'icon' %>
+        <% end %>
+       <!--    <section class="dropdown">
             <div class="scroll-wrap">
               <ul>
                 <li>
-                  <a href="profiles/:username">My Profile</a>
-                </li>
+                  <%= link_to('Edit registration', edit_user_registration_path) %>
+                <!  <a href="profiles/:username">My Profile</a> -->
+            <!--     </li>
               </ul>
             </div>
-          </section>
+          </section> -->
+
+           <div class="dropdown">
+        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+          Dropdown
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation"><%= link_to('Edit registration', edit_user_registration_path) %></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+          <li role="presentation" class="divider"></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+        </ul>
+      </div>
 
           </li>
           <%= render 'users/menu/registration_items' %>
@@ -91,9 +108,9 @@
         <div class="nav-collapse collapse navbar-responsive-collapse">
 
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
+           <!--  <li><%= link_to "Link1", "/path1"  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "Link3", "/path3"  %></li> -->
           </ul>
         </div>
       </div>
@@ -104,7 +121,14 @@
         <div class="left_notice tk-museo-sans-rounded">
           <ul class="shop-sell">
             <li class="header-tab header-sale">
-             <a href="/shop">Shop</a>
+              <div class="dropdown">
+             <a class='shop-dropdown' href="/shop">Shop</a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><%= link_to 'Clothes', '#' %></li>
+                <li><%= link_to 'Shoes', '#' %></li>
+                <li><%= link_to 'Bags', '#' %></li>
+              </ul>
+            </div>
              </li> 
              <li class="header-tab header-shop">
               <a href="/products/new">+ Sell</a>
