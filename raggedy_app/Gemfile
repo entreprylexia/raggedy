@@ -41,7 +41,7 @@ gem 'aws-sdk'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-# gem `protected_attributes`
+gem 'mailgun'
 
 
 group :doc do
