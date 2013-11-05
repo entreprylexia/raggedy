@@ -62,11 +62,18 @@
               </header>
             </div>
             </section>
+            
         </li>
-        <% if current_user %>
         <li class="account">
-          <%= image_tag current_user.avatar.url(:thumb), class: 'icon' %>
+          <div class="dropdown">
+        <% if current_user %>
+            <a class='shop-dropdown'><%= image_tag current_user.avatar.url(:thumb), class: 'icon' %></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li><%= link_to('My Profile', edit_user_registration_path) %></li>
+              <li><%= link_to('My Account', ) %></li>
+          </div>
         <% end %>
+
        <!--    <section class="dropdown">
             <div class="scroll-wrap">
               <ul>
@@ -78,24 +85,11 @@
             </div>
           </section> -->
 
-           <div class="dropdown">
-        <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-          Dropdown
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><%= link_to('Edit registration', edit_user_registration_path) %></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-        </ul>
-      </div>
+      
 
           </li>
-          <%= render 'users/menu/registration_items' %>
+         <%= render 'users/menu/registration_items' %>
           <%= render 'users/menu/login_items' %>
-
         </ul>
 
 
