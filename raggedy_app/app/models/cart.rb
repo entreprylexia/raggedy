@@ -5,7 +5,8 @@ class Cart < ActiveRecord::Base
     products.count
   end
 
-  # def empty!
-  # end
+  def empty!
+  	products.clear
+  end
 
 end

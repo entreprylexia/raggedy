@@ -48,7 +48,7 @@ describe 'Order confirmation' do
 			expect(seller_confirmation.subject).to eq "Item Sold"
 		end 
 
-		it 'should have the name of the name of the product which was sold' do 
+		it 'should have the name of the product which was sold' do 
 			create_order
 			seller_confirmation = emails.last
 

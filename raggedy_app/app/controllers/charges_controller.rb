@@ -22,9 +22,10 @@ class ChargesController < ApplicationController
 	  )
 
 	  Order.create(user: current_user, products: [@product])
-	  # current_cart.empty!
 
-	  current_cart.products.delete(@product)
+		current_cart.empty!
+
+	  # current_cart.products.delete(@product)
 	  # Empty your cart
 
 	rescue Stripe::CardError => e

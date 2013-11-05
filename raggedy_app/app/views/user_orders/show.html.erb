@@ -21,7 +21,8 @@
 		  </div>
 		</div>
 
-		<section class="navigation box">
+
+<!-- 		<section class="navigation box">
 
 		<ul class="nav">
 			<li class="active">
@@ -38,9 +39,25 @@
 					"
 					Purchases
 					"
-					<div class="badge red" style="display: none;"></div>
+					<div class="badge red" style="display: none;">
+
+
+					</div>
 				</a>
 			</li>
 
 		</ul> 
-	</section>
+	</section> -->
+			<h5> Bought Items </h5>
+			<% @bought.each do |order| %>
+				<% order.products.each do |product| %>
+					<li><%= product.title %>
+				<%= product.asking_price %></li>
+				<% end %>
+			<% end %>
+
+			<% if @bought.empty? %>
+				<h5> Seems you need to do some shopping! </h5>
+			<%end%>
+
+			<h5> Sold Items</h5>

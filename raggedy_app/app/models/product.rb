@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
 	belongs_to :user
 	has_many :comments
 	has_and_belongs_to_many :carts
-	has_and_belongs_to_many :order 
+	has_and_belongs_to_many :orders
 	
 	validates :title, presence: true,
                     length: { minimum: 3 }
