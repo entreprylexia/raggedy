@@ -25,8 +25,15 @@
         <% end %>
 
          <div class="facet">
-          <header>Price</header>
-          <ul>...</ul>
+          <header>Max Price</header>
+          <ul>
+                <li><%= link_to '£25', '/shop?max_price=25' %></li>
+                <li><%= link_to '£50', '/shop?max_price=50' %></li>
+                <li><%= link_to '£100', '/shop?max_price=100' %></li>
+                <li><%= link_to '£250', '/shop?max_price=250' %></li>
+                <li><%= link_to '£500', '/shop?max_price=500' %></li>
+
+          </ul>
         </div>
 
         </div>

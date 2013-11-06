@@ -72,7 +72,7 @@
           </div>
         <% else %>
           <li> <%= render 'users/menu/registration_items' %> </li>
-          
+
           <li>  <%= render 'users/menu/login_items' %> </li>
         <% end %>
       
@@ -108,9 +108,14 @@
               <div class="dropdown">
              <a class='shop-dropdown' href="/shop">Shop</a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><%= link_to 'Clothes', '/categories/25' %></li>
-                <li><%= link_to 'Shoes', '/categories/26' %></li>
-                <li><%= link_to 'Bags', '/categories/27' %></li>
+                <% Category.all.each do |category| %>
+                <div class="facet">
+                <header><%= link_to category.name, category %></header>
+                <% category.sub_categories.each do |sub_category| %>
+                <ul><%= link_to sub_category.name, [category, sub_category] %></ul>
+                <% end %>
+                </div>
+              <% end %>
               </ul>
             </div>
              </li> 
