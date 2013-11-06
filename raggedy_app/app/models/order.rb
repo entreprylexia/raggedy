@@ -12,6 +12,6 @@ class Order < ActiveRecord::Base
 			OrderNotifier.seller_confirmation_email(product, seller).deliver! 
 		end
 	end 
-
+	
 
 end
