@@ -16,3 +16,5 @@
 //= require_tree .
 
 $('.dropdown-toggle').dropdown()
+
+$('.carousel').carousel()

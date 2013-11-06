@@ -52,16 +52,12 @@
         <ul class="hmenu">
           <li class="cart">
           <span class='item_count'>
-            <%= link_to pluralize(current_cart.count, 'item'), current_cart %>
+            <%= link_to current_cart do %>
+              <%= pluralize(current_cart.count, 'item') %>
+              <%= image_tag("cart.png", :alt => "current_cart", class: 'cart-icon') %>
+            <% end %>
           </span>
-          <%= image_tag("cart.png", :alt => "current_cart", class: 'cart-icon') %>
-          <section class="dropdown cart_menu_dropdown" style="display: none;">
-            <div class="scroll-wrap">
-              <header>
-                <a href="/cart" class="header_cart_link" style="cursor: default;"> 0 Products in your basket</a>
-              </header>
-            </div>
-            </section>
+    
             
         </li>
         <li class="account">
@@ -69,15 +65,21 @@
         <% if current_user %>
             <a class='shop-dropdown'><%= image_tag current_user.avatar.url(:thumb), class: 'icon' %></a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-              <li><%= link_to('My Profile', edit_user_registration_path) %></li>
-              <li><%= link_to('My Account', ) %></li>
+            <li><%= link_to('My Profile', profile_path(current_user)) %></li> 
+              <li><%= link_to('My Account', user_order_path(current_user)) %></li>
+              <li><%= link_to('My Settings', edit_user_registration_path) %></li>
+              <li><%= link_to('Log Out', destroy_user_session_path) %></li>
           </div>
+        <% else %>
+          <li> <%= render 'users/menu/registration_items' %> </li>
+          
+          <li>  <%= render 'users/menu/login_items' %> </li>
         <% end %>
       
 
           </li>
-         <%= render 'users/menu/registration_items' %>
-          <%= render 'users/menu/login_items' %>
+        <!--  <%= render 'users/menu/registration_items' %>
+          <%= render 'users/menu/login_items' %> -->
         </ul>
 
 
@@ -106,9 +108,9 @@
               <div class="dropdown">
              <a class='shop-dropdown' href="/shop">Shop</a>
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li><%= link_to 'Clothes', '#' %></li>
-                <li><%= link_to 'Shoes', '#' %></li>
-                <li><%= link_to 'Bags', '#' %></li>
+                <li><%= link_to 'Clothes', '/categories/25' %></li>
+                <li><%= link_to 'Shoes', '/categories/26' %></li>
+                <li><%= link_to 'Bags', '/categories/27' %></li>
               </ul>
             </div>
              </li> 
