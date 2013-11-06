@@ -1,7 +1,7 @@
 <% if current_cart.products.any? %>
 	<% current_cart.products.each do |product| %>
 		<li>
-		<%= image_tag product.image.url(:thumb) %>
+		<%= image_tag product.image.url :thumb %>
 		<%= product.title %>
 		<%= product.text %>
 		<%= number_to_currency product.asking_price, unit: '£' %>
@@ -19,7 +19,7 @@
 		  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
 		          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 		          data-description="Your raggedy purchase"
-		          data-amount="<%= product.asking_price * 100 %>"
+		          data-amount="<%= product.asking_price * 100 if product.asking_price %>"
 		          data-currency='gbp'></script>
 		<% end %>
 

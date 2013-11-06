@@ -5,6 +5,7 @@ class Product < ActiveRecord::Base
 	has_many :comments
 	has_many :likes, counter_cache: true
 	has_and_belongs_to_many :carts
+	has_and_belongs_to_many :orders
 	
 	validates :title, presence: true,
                     length: { minimum: 3 }
@@ -18,3 +19,4 @@ class Product < ActiveRecord::Base
 	  "#{discount}%"
 	end 
 end
+

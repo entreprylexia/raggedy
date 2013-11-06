@@ -21,10 +21,16 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
+	  Order.create(user: current_user, products: [@product])
+
+		current_cart.empty!
+
+	  # current_cart.products.delete(@product)
+	  # Empty your cart
+
 	rescue Stripe::CardError => e
 	  flash[:error] = e.message
 	  redirect_to charges_path
 	end
-
 
 end
