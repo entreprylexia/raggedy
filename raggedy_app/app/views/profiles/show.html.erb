@@ -31,7 +31,7 @@
 
 		 	<div class="closet_title collection_toggle selected">Your Closet</div>
 		 	<br></br>
-		<% current_user.products.each do |product| %>
+		<% @user.products.unsold.each do |product| %>
 			<li class="item" style="display: list-item;">
 				<div class="item_box tk-museo-sans-rounded">
 				<a href="<%= product_path(product) %>" >

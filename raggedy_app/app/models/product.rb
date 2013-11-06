@@ -6,6 +6,8 @@ class Product < ActiveRecord::Base
 	has_many :likes, counter_cache: true
 	has_and_belongs_to_many :carts
 	has_and_belongs_to_many :orders
+
+
 	
 	validates :title, presence: true,
                     length: { minimum: 3 }
@@ -14,6 +16,18 @@ class Product < ActiveRecord::Base
 								bucket: 'raggedy_development'
 	
 
+	def sold?
+		self.orders.count != 0
+	end
+
+	def self.sold
+		all.select(&:sold?)
+	end 
+
+	def self.unsold
+		all.reject(&:sold?)
+	end 
+	
 	def discount 
 	  discount = ((1-(asking_price/original_price))*100).to_i
 	  "#{discount}%"

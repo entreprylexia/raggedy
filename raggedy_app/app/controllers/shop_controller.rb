@@ -1,5 +1,5 @@
 class ShopController < ApplicationController
   def index
-  	@products = Product.all.order('likes_count desc')
+  	@products = Product.order('likes_count desc').unsold
   end
 end

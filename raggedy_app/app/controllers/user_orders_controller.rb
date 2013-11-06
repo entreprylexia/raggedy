@@ -5,6 +5,7 @@ class UserOrdersController < ApplicationController
   def show
      @user = User.find_by_username(params[:id])
      @bought = @user.orders
+     @sold = @user.products.sold
   end
 
   private
