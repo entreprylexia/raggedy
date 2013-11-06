@@ -52,7 +52,7 @@
 			<% @bought.each do |order| %>
 				<% order.products.each do |product| %>
 					<li><%= product.title %>
-				<%= product.asking_price %></li>
+				<%= number_to_currency product.asking_price, unit: '£' %></li>
 				<% end %>
 			<% end %>
 
@@ -61,3 +61,7 @@
 			<%end%>
 
 			<h5> Sold Items</h5>
+			<% @sold.each do |product| %>
+				<li><%= product.title %>
+				<%= number_to_currency product.asking_price, unit: '£' %></li>
+			<% end %>
