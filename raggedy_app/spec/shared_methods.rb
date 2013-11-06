@@ -10,6 +10,7 @@ shared_context "signed in" do
 	fill_in 'Email', with: 'example@example.com'
 	fill_in 'Password', with: 'changeme'
 	click_button 'Sign in'
+	# login_as(@user, :scope=>:user))
   end
  
   let(:user) { @user }

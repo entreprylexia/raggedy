@@ -7,7 +7,7 @@ describe "signed in" do
 
 	before do
 		# user = FactoryGirl.create(:user)
-		# login_as(user)
+		# login_as(user, :scope=>:user))
 		load "#{Rails.root}/db/seeds.rb"
 	end
 	
