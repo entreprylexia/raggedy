@@ -113,9 +113,9 @@
                 <header><%= link_to category.name, category %></header>
                 <% category.sub_categories.each do |sub_category| %>
                 <ul><%= link_to sub_category.name, [category, sub_category] %></ul>
-                <% end %>
-                </div>
-              <% end %>
+            <% end %>
+          </div>
+        <% end %>
               </ul>
             </div>
              </li> 
