@@ -27,7 +27,8 @@ describe Product do
 		expect(product).not_to be_sold
 	end 
 
-	it "is sold if it has an order" do 
+	it "is sold if it has an order" do
+		Order.any_instance.stub(:send_confirmation_email)
 		product = FactoryGirl.create(:product_with_orders)
 		expect(product).to be_sold
 	end
@@ -39,6 +40,7 @@ describe Product do
 
 	
 	it "unsold doesn't count sold items" do
+		Order.any_instance.stub(:send_confirmation_email)
 		FactoryGirl.create(:product_with_orders)
 		expect(Product.unsold.count).to eq 0
 	end
