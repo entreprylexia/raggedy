@@ -10,6 +10,8 @@ class Order < ActiveRecord::Base
 		products.each do |product|
 			seller =  product.user
 			OrderNotifier.seller_confirmation_email(product, seller).deliver! 
+			product.sold = true
+			product.save
 		end
 	end 
 
