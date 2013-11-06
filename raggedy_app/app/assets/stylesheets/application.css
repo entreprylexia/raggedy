@@ -525,19 +525,19 @@ ul.hmenu li {
     display: block;    
 }
 
-.dropdown-menu {
+.shop-sell .dropdown-menu {
 	width: 470px;
 }
 
-.dropdown-menu .facet {
+.shop-sell .dropdown-menu .facet {
 	float: left;
 	padding: 0 10px;
 }
-.dropdown-menu .facet ul {
+.shop-sell .dropdown-menu .facet ul {
 	padding-left: 0;
 }
 
-.dropdown-menu header {
+.shop-sell .dropdown-menu header {
 	font-weight: bold;
 }
 

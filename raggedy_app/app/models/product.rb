@@ -14,19 +14,20 @@ class Product < ActiveRecord::Base
     has_attached_file :image, styles: {thumb: '208 x 294>'},
 								storage: :s3,
 								bucket: 'raggedy_development'
-	
 
-	def sold?
-		self.orders.count != 0
-	end
 
-	def self.sold
-		all.select(&:sold?)
-	end 
+	scope :sold, -> { where(sold: true) }
+	scope :unsold, -> { where(sold: false) }
+	scope :cheaper_than, ->(amount) { where('asking_price < ?', amount) }
+	scope :more_expensive_than, ->(amount) { where('asking_price > ?', amount) }
 
-	def self.unsold
-		all.reject(&:sold?)
-	end 
+	# def self.sold
+	# 	all.select(&:sold?)
+	# end 
+
+	# def self.unsold
+	# 	all.reject(&:sold?)
+	# end 
 	
 	def discount 
 	  discount = ((1-(asking_price/original_price))*100).to_i
