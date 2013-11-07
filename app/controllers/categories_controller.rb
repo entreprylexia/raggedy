@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
 	  end
 
 	def show
-		@category = Category.find(params[:id])
+		@category = Category.where('LOWER(name) = ?', params[:id]).first
 		@products = @category.products
 	end
 end

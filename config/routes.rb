@@ -9,7 +9,7 @@ RaggedyApp::Application.routes.draw do
 
   resources :profiles
 
-  resources :user_orders
+  # resources :user_orders
   # get "/welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -39,7 +39,7 @@ RaggedyApp::Application.routes.draw do
 end
 
   resources :charges
-
+  get ':username', to: 'user_orders#show', as: :user_order
 
   # root to: 'welcome#index'
 
