@@ -5,7 +5,7 @@ class SubCategoriesController < ApplicationController
 	  end
 
 	def show
-		@sub_category = SubCategory.find(params[:id])
+		@sub_category = SubCategory.where('LOWER(name) = ?', params[:id]).first
 		@products = @sub_category.products
 		# @products = @products.where(size: params[:size]) if params[:size]
 	end

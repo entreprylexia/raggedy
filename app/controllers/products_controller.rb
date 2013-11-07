@@ -55,7 +55,7 @@ def destroy
   @product = Product.find(params[:id])
   @product.destroy
  
-  redirect_to products_path
+  redirect_to shop_path
 end
 
  protect_from_forgery with: :exception
