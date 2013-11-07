@@ -9,4 +9,9 @@ class Cart < ActiveRecord::Base
   	products.clear
   end
 
+  def total
+  	# products.map(&:asking_price)
+  	products.map{|p| p.asking_price}.inject(&:+)
+  end
+
 end
