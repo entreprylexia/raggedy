@@ -79,7 +79,7 @@
 					    </label>
 					  </article>
 
-					  <% if @product.asking_price %>
+					  <% if @product.asking_price && (current_user && current_user != @product.user) %>
 						  <script src="https://checkout.stripe.com/v2/checkout.js" class="stripe-button"
 						          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 						          data-description="Your raggedy purchase"
