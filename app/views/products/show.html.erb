@@ -61,7 +61,7 @@
 					  <%= @product.text %>
 					</p>
 					
-					<%= link_to 'Back', products_path %>
+					<%= link_to 'Back', shop_path %>
 					<% if @product.user == current_user || current_admin %>
 						<%= link_to 'Edit', edit_product_path(@product) %>
 						<%= link_to 'Destroy', product_path(@product), method: :delete, data: { confirm: 'Are you sure?' } %>
