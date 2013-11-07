@@ -7,7 +7,7 @@ describe 'Sign up/in/out:' do
 	it 'new user can sign up' do 
 		create(:user)
 		visit '/'
-		click_link 'Register'
+		click_link 'Sign Up'
 		fill_in 'Username', with: 'new_user'
 		fill_in 'Email', with: 'user@example.com'
 		fill_in 'Password', with: 'changeme'
@@ -21,7 +21,7 @@ describe 'Sign up/in/out:' do
 	it 'can/t use existing username when singing up' do
 		create(:user)
 	 	visit '/'
-		click_link 'Register'
+		click_link 'Sign Up'
 		fill_in 'Username', with: 'existing_user'
 		fill_in 'Email', with: 'example@example.com'
 		fill_in 'Password', with: 'changeme'
@@ -40,7 +40,7 @@ describe 'Sign up/in/out:' do
 		end
 
 		it 'when signed in can logout' do 
-			click_link 'Logout'
+			click_link 'Log Out'
 			expect(page).to have_content 'Signed out successfully'
 		end 
 	end
