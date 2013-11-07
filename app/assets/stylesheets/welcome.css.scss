@@ -39,7 +39,7 @@ z-index: 90;
 }
 
 .login_callout .prompt_content {
-width: 670px;
+width: 100%;
 padding: 0 20px;
 }
 
@@ -93,7 +93,7 @@ text-transform: uppercase;
 float: right;
 }
 
-.login_callout .login-link {
+.login-link {
 letter-spacing: 1px;
 cursor: pointer;
 outline: none;
@@ -110,6 +110,7 @@ color: #fff;
 /*width: 90px;*/
 margin: 12px auto 0 auto;
 display: block;
+width: 150px;
 }
 
 .login_callout .right_arrow {

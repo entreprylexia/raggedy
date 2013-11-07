@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
   def current_cart
   	Cart.find session[:cart_id]
-  end 
+  end
 
   protected
 
