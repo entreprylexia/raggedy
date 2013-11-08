@@ -16,6 +16,9 @@ class ProfilesController < ApplicationController
 	def update
 		@user.update(params[:user].permit(:avatar))
 		redirect_to profile_path(@user)
+	rescue AWS::S3::Errors::RequestTimeout
+		flash[:notice] = 'There was a problem connecting to S3'
+		redirect_to profile_path(@user)
 	end 
 
 	private
