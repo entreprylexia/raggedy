@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
 	belongs_to :sub_size
 	belongs_to :user
 	has_many :comments
-	has_many :likes, counter_cache: true
+	has_many :likes#, counter_cache: true
 	has_and_belongs_to_many :carts
 	has_and_belongs_to_many :orders
 

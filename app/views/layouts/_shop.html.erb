@@ -27,8 +27,11 @@
 			<div class="pricing_container">
 				<div class="price tk-museo-sans-rounded">
 			<span class='asking-price'>
-			    <strong><%= number_to_currency(product.asking_price, unit: '£').gsub(/\.00$/, "") %></strong>
+
+				<strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
 	    	</span>
+			   <strong><%= number_to_currency(product.asking_price, unit: '£').gsub(/\.00$/, "") %></strong>
+	    	</span> 
 	  
 	    	<span class='original-price'>
 			 	<%= number_to_currency product.original_price, unit: '£' %>
