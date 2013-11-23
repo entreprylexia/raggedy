@@ -15,6 +15,12 @@ describe Product do
 		end
 	end 
 
+	it 'should only take float number for asking_price' do 
+
+	end 
+
+	it 'should only take float number for original_price' do 
+	end 
 
 
 	it 'calculates a discount' do
@@ -44,6 +50,8 @@ describe Product do
 		FactoryGirl.create(:product_with_orders)
 		expect(Product.unsold.count).to eq 0
 	end
+
+
 
 end 
 
