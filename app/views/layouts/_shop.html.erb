@@ -18,7 +18,11 @@
 
 			<div class="controls">
 				<div class='like-btn <%= 'liked' if current_user && current_user.liked?(product) %>'>
-					<%= link_to product.likes.count, product_likes_path(product), method: :post, class: 'want' %>
+					<% if current_user %>
+						<%= link_to product.likes.count, product_likes_path(product), method: :post, class: 'want' %>
+					<% else %>
+					  <span class='want'><%= product.likes.count %></span>
+					  <%end%>
 				</div>
 			<a href="<%= product_path(product) %>" >
 				<h4><%= product.title %></h4>
@@ -27,9 +31,9 @@
 			<div class="pricing_container">
 				<div class="price tk-museo-sans-rounded">
 			<span class='asking-price'>
-
+ <!-- 
 				<strong><%= number_to_currency product.asking_price, unit: '£' %></strong>
-	    	</span>
+	    	</span> --> 
 			   <strong><%= number_to_currency(product.asking_price, unit: '£').gsub(/\.00$/, "") %></strong>
 	    	</span> 
 	  

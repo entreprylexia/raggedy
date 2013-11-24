@@ -11,6 +11,11 @@ class Product < ActiveRecord::Base
 	
 	validates :title, presence: true,
                     length: { minimum: 3 }
+    validates :asking_price, presence: true, numericality: true
+    validates :original_price, presence: true, numericality: true
+    validate :original_price_greater_than_asking_price
+
+
     has_attached_file :image, styles: {thumb: '208 x 294>'},
 								storage: :s3,
 								bucket: 'raggedy_development'
@@ -28,9 +33,16 @@ class Product < ActiveRecord::Base
 	# def self.unsold
 	# 	all.reject(&:sold?)
 	# end 
+
+	def original_price_greater_than_asking_price
+		if asking_price > original_price
+		  errors.add(:original_price, "must be greater than asking price")
+		end
+	end
 	
-	def discount 
-	  discount = ((1-(asking_price/original_price))*100).to_i
+	def discount
+	  discount = 0 
+	  discount = ((1-(asking_price/original_price))*100).to_i if original_price > 0
 	  "#{discount}%"
 	end 
 end

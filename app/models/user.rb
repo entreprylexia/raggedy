@@ -24,6 +24,7 @@ class User < ActiveRecord::Base
 
   def like_product(product)
     likes.find_by(product_id: product.id) || Like.new(product: product)
+    # likes.find_or_create_by product_id: product.id 
   end
 
   def liked?(product)

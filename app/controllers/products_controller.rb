@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 
     @product.user = current_user
 
-  	if @product.save!
+  	if @product.save
        redirect_to @product
     else 
    	  render 'new'
@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
   def update
   @product = Product.find(params[:id])
  
-  if @product.update(params[:product].permit(:title, :text, :image))
+  if @product.update(params[:product].permit(:title, :text, :image, :asking_price, :original_price))
     redirect_to @product
   else
     render 'edit'
