@@ -57,6 +57,12 @@
 			      	</p>
 
 			      	<p>
+			      		<strong>Category:</strong>
+			      		<%= @product.sub_category.name if @product.sub_category %>
+
+			      	</p>	
+
+			      	<p>
 					  <strong>Description:</strong>
 					  <%= @product.text %>
 					</p>

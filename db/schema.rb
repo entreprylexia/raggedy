@@ -116,6 +116,10 @@ ActiveRecord::Schema.define(version: 20131106160755) do
     t.datetime "updated_at"
   end
 
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+
   create_table "sizes", force: true do |t|
     t.string   "name"
     t.integer  "category_id"
